@@ -5,6 +5,7 @@ import { User } from '../models/user-model'
 import { environment } from 'src/environments/environment';
 
 import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -17,7 +18,7 @@ export class UserService {
 
     private getUsersUrl = environment.urlUserAll;
 
-    public getUsers() {
+    public getUsers(): Observable<User[]> {
         return this.http.get<User[]>(this.getUsersUrl);
     }
 }
