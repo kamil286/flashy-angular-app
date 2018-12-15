@@ -4,7 +4,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/user-model'
 import { environment } from 'src/environments/environment';
 
-import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
 
 const httpOptions = {

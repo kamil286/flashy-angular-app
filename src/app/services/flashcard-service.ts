@@ -6,8 +6,6 @@ import { Flashcard } from '../models/flashcard-model';
 
 import { environment } from 'src/environments/environment';
 
-import 'rxjs/add/operator/map';
-
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -19,7 +17,7 @@ export class FlashcardService {
 
     private getFlashcardsUrl = environment.urlFlashcardAll;
 
-    public getUsers(): Observable<Flashcard[]> {
+    public getFlascards(): Observable<Flashcard[]> {
         return this.http.get<Flashcard[]>(this.getFlashcardsUrl);
     }
 }

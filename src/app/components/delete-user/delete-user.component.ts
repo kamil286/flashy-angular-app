@@ -4,16 +4,16 @@ import { User } from 'src/app/models/user-model';
 import { UserService } from '../../services/user-service'
 
 @Component({
-    selector: 'app-create-user',
-    templateUrl: './create-new-user.component.html'
+    selector: 'app-delete-user',
+    templateUrl: './delete-user.component.html'
 })
-export class CreateNewUserComponent implements OnInit {
+export class DeleteUserComponent implements OnInit {
 
     users: User[];
 
     constructor(private router: Router, private userService: UserService) { }
 
     ngOnInit() {
-        console.log("Perform creation of the new user");
+        console.log("Perform deletion of the user!");
     }
 }
