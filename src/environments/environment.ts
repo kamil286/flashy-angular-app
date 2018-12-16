@@ -11,7 +11,7 @@ export const environment = {
   urlFlashcardUpdate: '',
   urlFlashcardDelete: '',
   urlFlashcardAdd: '',
-  urlFlashcardAll: '',
+  urlFlashcardAll: 'http://localhost:8101/flashcard/all',
 };
 
 /*
