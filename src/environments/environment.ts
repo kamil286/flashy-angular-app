@@ -2,6 +2,8 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
+//Wyciągnąd nazwę portu do stałej.
 export const environment = {
   production: false,
   urlUserUpdate: '',
@@ -9,8 +11,8 @@ export const environment = {
   urlUserAdd: 'http://localhost:8101/user',
   urlUserAll: '',
   urlFlashcardUpdate: '',
-  urlFlashcardDelete: '',
-  urlFlashcardAdd: '',
+  urlFlashcardDelete: 'http://localhost:8101/flashcard/delete',
+  urlFlashcardAdd: 'http://localhost:8101/flashcard/create',
   urlFlashcardAll: 'http://localhost:8101/flashcard/all',
 };
 

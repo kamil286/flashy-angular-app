@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-nav-bar-mat',
@@ -15,6 +17,9 @@ export class NavBarMatComponent {
       map(result => result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, private router: Router) {}
 
+  createFlashcard() {
+    this.router.navigate(["/create"]);
+  }
 }

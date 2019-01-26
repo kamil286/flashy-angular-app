@@ -1,0 +1,16 @@
+<form #form="ngForm" (ngSubmit)="createFlashcard(form)" [formGroup]="validatingForm">
+  <div class="md-form">
+    <div class="title-container">
+      <span>Title</span>
+      <input mdbInput mdbValidate type="text" id="form1" class="form-control" formControlName="required">
+    </div>
+    <div class="content-container">
+        <span>Content</span>
+        <input mdbInput mdbValidate type="text" id="form1" class="form-control" formControlName="required">
+    </div>
+    <div class="has-error" *ngIf="input.invalid && (input.dirty || input.touched)">One of the inputs is empty!</div>
+    <div>
+        <button type="submit" class="btn btn-primary btn-lg create-button">Create</button>
+    </div>
+  </div>
+</form>

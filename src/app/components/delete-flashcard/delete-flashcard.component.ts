@@ -14,6 +14,6 @@ export class DeleteFlashcardComponent implements OnInit {
     constructor(private router: Router, private flashcardService: FlashcardService) { }
 
     ngOnInit() {
-        console.log("Perform deletionof the flashcard!");
+        console.log("Perform deletion of the flashcard!");
     }
 }

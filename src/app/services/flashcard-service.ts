@@ -16,9 +16,21 @@ export class FlashcardService {
     constructor(private http: HttpClient) { }
 
     private getFlashcardsUrl = environment.urlFlashcardAll;
+    private deleteFlashcardUrl = environment.urlFlashcardDelete;
+    private createFlashcardUrl = environment.urlFlashcardAdd;
 
     public getFlascards(): Observable<Flashcard[]> {
         return this.http.get<Flashcard[]>(this.getFlashcardsUrl, { headers: this.getHeaders() });
+    }
+
+    public deleteFlascard(flashcardId: string) {
+        console.log("Deletion address: " + this.deleteFlashcardUrl + "/" + flashcardId);
+        this.http.delete(this.deleteFlashcardUrl + "/" + flashcardId, { headers: this.getHeaders() });
+    }
+
+    public createFlashcard(flashcard: Flashcard) {
+        console.log("Creation address: " + this.createFlashcardUrl + "/" + JSON.stringify(flashcard));
+        this.http.post(this.createFlashcardUrl, JSON.stringify(flashcard), { headers: this.getHeaders() });
     }
 
     private getHeaders() {

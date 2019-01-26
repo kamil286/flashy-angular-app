@@ -1,9 +1,8 @@
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { Flashcard } from 'src/app/models/flashcard-model';
 import { FlashcardService } from '../../services/flashcard-service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-flashcard-board-mat',
@@ -22,10 +21,23 @@ export class FlashcardBoardMatComponent implements OnInit {
     this.isFetching = true;
     this.flashcardService.getFlascards()
       .subscribe(data => {
-        data.forEach(element => {
+        data.forEach(element => { 
           this.flashcards.push(element);
         })
         this.isFetching = false;
       });
+  }
+
+  modifyFlashcard(id: string) {
+    console.log("Modifing!" + id);
+  } 
+  
+  removeFlashcard(id: string) {
+    console.log("Removig!" + id);
+    this.flashcardService.deleteFlascard(id);
+  }
+
+  redirectToFlashcardCreation() {
+    this.router.navigate(['/create']);
   }
 }
